@@ -36,4 +36,24 @@ public class Passenger {
     public void setUniqueId(int uniqueId) {
         this.uniqueId = uniqueId;
     }
+
+    public String getAddress(){
+        return this.contactInfo.getAddress();
+    }
+    public String getEmail(){
+        return this.contactInfo.getEmail();
+    }
+    public String getNumber(){
+        return this.contactInfo.getPhoneNumber();
+    }
+
+    public void setAddress(String address){
+        this.contactInfo.setAddress(address);
+    }
+    public void setEmail(String email){
+        this.contactInfo.setEmail(email);
+    }
+    public void setNumber(String number){
+        this.contactInfo.setPhoneNumber(number);
+    }
 }
