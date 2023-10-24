@@ -1,1 +1,1 @@
-public class ContactInfo {}
+public class ContactInfo {    private String email;    private String address;    private double phoneNumber;    public ContactInfo(String email, String address, double phoneNumber){        this.email = email;        this.address = address;        this.phoneNumber = phoneNumber;    }}
