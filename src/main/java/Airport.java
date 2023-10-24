@@ -2,32 +2,42 @@ import java.util.ArrayList;
 
 public class Airport {
     ArrayList<Flight> flights;
+    ArrayList<Passenger> airportPassengers;
     private String name;
 
     public Airport (String name){
         this.name = name;
         this.flights = new ArrayList<>();
+        this.airportPassengers = new ArrayList<>();
     }
 
-    public void addNewPassenger(String name, ContactInfo contactInfo){
+    public void addNewPassenger(String name, String email, String address, String phoneNumber){
+        ContactInfo contactInfo = new ContactInfo(email, address, phoneNumber);
         Passenger passenger = new Passenger(name, contactInfo);
+        this.airportPassengers.add(passenger);
     }
 
     public void addNewFlight(String destination){
         Flight flight = new Flight (destination);
-    }
-    public void addNewFlightToFlights(Flight flight){
         this.flights.add(flight);
+    }
+    public void addNewFlight(Flight flight){
+        this.flights.add(flight); //might break everything if removed
     }
 
     public ArrayList<Flight> displayFlights(){
         return this.flights;
     }
 
-    public void bookPassenger(Passenger passenger, Flight flight){
+    public void bookPassenger(String destination, int uniqueId){
         for (int i = 0; i < this.flights.size(); i++) {
-            if (flights.get(i).equals(flight)) { //neeed to have check for if passenger is already on flight
-                flights.get(i).addPassenger(passenger);
+            if (flights.get(i).getDestination().equals(destination)) { //neeed to have check for if passenger is already on flight
+                for (int j = 0; j < this.airportPassengers.size() ; j++) {
+                    if (airportPassengers.get(j).getUniqueId() == uniqueId){
+                        flights.get(i).addPassenger(airportPassengers.get(j));
+                    }
+                }
+
             }
         }
     }
