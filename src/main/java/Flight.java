@@ -14,6 +14,10 @@ public class Flight {
         this.uniqueIdentifier = random.nextInt();
     }
 
+    public void addPassenger(Passenger passenger){
+        this.passengers.add(passenger);
+    }
+
     public ArrayList<Passenger> getPassengers() {
         return passengers;
     }
