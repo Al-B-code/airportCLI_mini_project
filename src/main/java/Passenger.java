@@ -12,4 +12,28 @@ public class Passenger {
         this.contactInfo = contactInfo;
         this.uniqueId = random.nextInt();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ContactInfo getContactInfo() {
+        return contactInfo;
+    }
+
+    public void setContactInfo(ContactInfo contactInfo) {
+        this.contactInfo = contactInfo;
+    }
+
+    public int getUniqueId() {
+        return uniqueId;
+    }
+
+    public void setUniqueId(int uniqueId) {
+        this.uniqueId = uniqueId;
+    }
 }
