@@ -42,11 +42,11 @@ public class Airport {
         }
     }
 
-    public void removePassenger(Passenger passenger, Flight flight) {
+    public void removePassenger(String destination, int uniqueId) {
         for (int i = 0; i < this.flights.size(); i++) {
-            if (flights.get(i).equals(flight)) { //neeed to have check for if passenger is already on flight
+            if (flights.get(i).getDestination().equals(destination)) { //neeed to have check for if passenger is already on flight
                 for (int j = 0; j < flights.get(i).getPassengers().size(); j++) {
-                    if (flights.get(i).getPassengers().get(j).equals(passenger)) {
+                    if (flights.get(i).getPassengers().get(j).getUniqueId() == uniqueId) {
                         flights.get(i).getPassengers().remove(j);
                     } else {
                         System.out.println("passenger not on flight");
@@ -57,9 +57,9 @@ public class Airport {
         }
     }
 
-    public void removeFlight(Flight flight){
+    public void removeFlight(String destination){
         for (int i = 0; i < flights.size(); i++) {
-            if (flights.get(i).equals(flight)){
+            if (flights.get(i).getDestination().equals(destination)){
                 flights.remove(i);
             }
         }
